@@ -66,6 +66,7 @@ public class Vector extends Point {
         double u1 = xyz.d1;
         double u2 = xyz.d2;
         double u3 = xyz.d3;
+
         double v1 = other.xyz.d1;
         double v2 = other.xyz.d2;
         double v3 = other.xyz.d3;
@@ -90,7 +91,12 @@ public class Vector extends Point {
     public double length() {
         return Math.sqrt(lengthSquared());
     }
-    public Vector normalize() {
 
+    public Vector normalize() {
+        Double3 result = new Double3(
+                xyz.d1/this.length(),
+                xyz.d2/this.length(),
+                xyz.d3/this.length());
+        return new Vector(result.d1,result.d2,result.d3);
     }
 }
