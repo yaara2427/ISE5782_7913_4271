@@ -39,7 +39,7 @@ public class Vector extends Point {
     }
 
     public Vector scale(double scalar) {
-        if (isZero(scalar)) {
+        if (scalar==0) {
             throw new IllegalArgumentException("scaling factor == 0");
         }
         Double3 result = new Double3(
