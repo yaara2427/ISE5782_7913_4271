@@ -100,7 +100,3 @@ public class Vector extends Point {
         return new Vector(result.d1,result.d2,result.d3);
     }
 }
-hvhvbhbhbh
-
-
-hiiiiiiii
