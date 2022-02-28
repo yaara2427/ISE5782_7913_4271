@@ -88,3 +88,4 @@ public class Polygon implements Geometry {
     public Vector getNormal(Point point) {
         return plane.getNormal();
     }
+    hiiiiiii
