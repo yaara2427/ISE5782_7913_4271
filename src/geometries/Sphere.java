@@ -1,4 +1,33 @@
 package geometries;
+import java.util.List;
 
-public class Sphere {
+import primitives.*;
+import static primitives.Util.*;
+public class Sphere implements Geometry {
+    private Point _center;
+    private double _radius;
+    public Sphere(Point p, double radius)
+    {
+        _center=p;
+        _radius =  radius;
+    }
+    @Override
+    public Vector getNormal(Point p) {
+        return null;
+    }
+
+    @Override
+    public String toString() {
+        return "Sphere: " +
+                "center: " + _center +
+                "radius: " + _radius;
+    }
+    public Point getCenter()
+    {
+        return _center;
+    }
+    public double getRadius()
+    {
+        return _radius;
+    }
 }
