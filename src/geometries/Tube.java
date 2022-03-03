@@ -5,13 +5,30 @@ import primitives.*;
 import static primitives.Util.*;
 
 public class Tube implements Geometry {
-    protected Ray _axisRay;
-    protected double _radius;
+    protected final Ray axisRay;
+    protected final double radius;
 
-    public Tube(Ray axisRay, double radius) {
-        _axisRay = axisRay;
-        _radius = radius;
+    public Tube(Ray _axisRay, double _radius) {
+        axisRay = _axisRay;
+        radius = _radius;
     }
+
+    public Ray getAxisRay() {
+        return axisRay;
+    }
+
+    public double getRadius() {
+        return radius;
+    }
+
+    @Override
+    public String toString() {
+        return "Tube{" +
+                "axisRay=" + axisRay +
+                ", radius=" + radius +
+                '}';
+    }
+
     @Override
     public Vector getNormal(Point point) {
         return null;
