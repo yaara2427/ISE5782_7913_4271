@@ -8,6 +8,18 @@ public class Vector extends Point {
         }
     }
 
+    @Override
+    public String toString() {
+        return "Vector{" +
+                "xyz=" + xyz +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        return super.equals(o);
+    }
+
     /**
      * add method
      *

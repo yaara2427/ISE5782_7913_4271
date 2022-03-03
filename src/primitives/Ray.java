@@ -9,6 +9,14 @@ public class Ray {
         dir = _dir.normalize();
     }
 
+    public Point getP0() {
+        return p0;
+    }
+
+    public Vector getDir() {
+        return dir;
+    }
+
     @Override
     public String toString() {
         return "Ray{" +
