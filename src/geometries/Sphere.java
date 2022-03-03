@@ -4,30 +4,33 @@ import java.util.List;
 import primitives.*;
 import static primitives.Util.*;
 public class Sphere implements Geometry {
-    private Point _center;
-    private double _radius;
-    public Sphere(Point p, double radius)
+    private Point center;
+    private double radius;
+    public Sphere(Point _center, double _radius)
     {
-        _center=p;
-        _radius =  radius;
+        center= _center;
+        radius = _radius;
     }
-    @Override
-    public Vector getNormal(Point p) {
-        return null;
+    public Point getCenter()
+    {
+        return center;
+    }
+
+    public double getRadius()
+    {
+        return radius;
     }
 
     @Override
     public String toString() {
         return "Sphere: " +
-                "center: " + _center +
-                "radius: " + _radius;
+                "center: " + center +
+                "radius: " + radius;
     }
-    public Point getCenter()
-    {
-        return _center;
+
+    @Override
+    public Vector getNormal(Point point) {
+        return null;
     }
-    public double getRadius()
-    {
-        return _radius;
-    }
+
 }
