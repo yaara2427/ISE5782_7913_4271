@@ -8,7 +8,14 @@ public class Plane {
     Vector normal;
 
     public Plane(Point p1, Point p2, Point p3) {
+        p0 = p1;
+        Vector U = p2.subtract(p1);
+        Vector V = p3.subtract(p1);
 
+        Vector _normal = U.crossProduct(V);
+
+        _normal.normalize();
+        normal =_normal;
     }
 
     public Plane(Point _p0, Vector _normal) {
