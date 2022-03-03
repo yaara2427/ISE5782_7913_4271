@@ -22,4 +22,20 @@ public class Plane {
         p0= _p0;
         normal=_normal.normalize();
     }
+
+    public Point getP0() {
+        return p0;
+    }
+
+    public Vector getNormal() {
+        return normal;
+    }
+
+    @Override
+    public String toString() {
+        return "Plane{" +
+                "p0=" + p0 +
+                ", normal=" + normal +
+                '}';
+    }
 }
