@@ -3,31 +3,60 @@ import java.util.List;
 
 import primitives.*;
 import static primitives.Util.*;
+/**
+ * Class for representing a sphere
+ */
 public class Sphere implements Geometry {
-    private Point _center;
-    private double _radius;
-    public Sphere(Point p, double radius)
+    /**
+     * Center of sphere
+     */
+    private Point center;
+    /**
+     * Radius of sphere
+     */
+    private double radius;
+    /**
+     * Ctor for sphere
+     *
+     * @param _radius sphere radius
+     * @param _center sphere center 
+     */
+    public Sphere(Point _center, double _radius)
     {
-        _center=p;
-        _radius =  radius;
+        center= _center;
+        radius = _radius;
     }
-    @Override
-    public Vector getNormal(Point p) {
-        return null;
+    /**
+     * get function for center of sphere
+     *
+     * @return sphere center
+     */
+    public Point getCenter()
+    {
+        return center;
     }
-
+/**
+     * get function for radius of sphere
+     *
+     * @return sphere radius
+     */
+    public double getRadius()
+    {
+        return radius;
+    }
+/**
+     * function for printing sphere info
+     */
     @Override
     public String toString() {
         return "Sphere: " +
-                "center: " + _center +
-                "radius: " + _radius;
+                "center: " + center +
+                "radius: " + radius;
     }
-    public Point getCenter()
-    {
-        return _center;
+
+    @Override
+    public Vector getNormal(Point point) {
+        return null;
     }
-    public double getRadius()
-    {
-        return _radius;
-    }
+
 }
