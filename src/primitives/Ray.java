@@ -21,10 +21,17 @@ public class Ray {
         p0 = _p0;
         dir = _dir.normalize();
     }
-
+ /**
+     * get function for the ray's starting point
+     * @return p0
+     */
     public Point getP0() {
         return p0;
     }
+     /**
+     * get function for the ray's direction vector
+     * @return dir
+     */
 
     public Vector getDir() {
         return dir;
