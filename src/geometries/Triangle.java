@@ -20,7 +20,9 @@ public class Triangle extends Polygon {
     {
         super(p1,p2,p3);
     }
-
+/**
+*function for printing triangle info 
+*/
     @Override
     public String toString() {
         return "Triangle: " + "vertices: " + vertices + "plane: " + plane;}
