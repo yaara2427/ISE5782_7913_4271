@@ -37,6 +37,9 @@ public class Ray {
         return dir;
     }
 
+     /**
+     * function to print ray info
+     */
     @Override
     public String toString() {
         return "Ray{" +
