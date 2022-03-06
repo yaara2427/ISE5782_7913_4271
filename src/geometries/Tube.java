@@ -15,16 +15,29 @@ public class Tube implements Geometry {
      * tube radius
      */
     protected final double radius;
-
+/**
+     * ctor for tube
+     *
+     * @param axisRay tube direction
+     * @param radius  tube radius
+     */
     public Tube(Ray _axisRay, double _radius) {
         axisRay = _axisRay;
         radius = _radius;
     }
-
+/**
+     * get function for tube direction
+     *
+     * @return tube direction
+     */
     public Ray getAxisRay() {
         return axisRay;
     }
-
+/**
+     * get function for tube radius
+     *
+     * @return tube radius
+     */
     public double getRadius() {
         return radius;
     }
