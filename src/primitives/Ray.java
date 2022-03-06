@@ -11,7 +11,12 @@ public class Ray {
      * Vector that determines the ray's direction
      */
     Vector dir;
-
+ /**
+     * Constructor that normalizes the given vector and sets the starting point to @param _p0
+     *
+     * @param p0  point of the ray beginning
+     * @param dir direction vector
+     */
     public Ray(Point _p0, Vector _dir) {
         p0 = _p0;
         dir = _dir.normalize();
