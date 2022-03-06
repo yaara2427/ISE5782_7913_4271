@@ -24,11 +24,17 @@ public class Cylinder extends Tube {
             throw new IllegalArgumentException("height has to be positive");
        height = _height;
     }
-
+/**
+     * get function for cylinder height
+     *
+     * @return the height of the cylinder
+     */
     public double getHeight() {
         return height;
     }
-
+/** 
+*function for printing cylinder parameters to string
+*/
     @Override
     public String toString() {
         return "Cylinder{" +
