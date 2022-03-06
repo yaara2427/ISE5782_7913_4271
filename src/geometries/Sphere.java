@@ -26,16 +26,27 @@ public class Sphere implements Geometry {
         center= _center;
         radius = _radius;
     }
+    /**
+     * get function for center of sphere
+     *
+     * @return sphere center
+     */
     public Point getCenter()
     {
         return center;
     }
-
+/**
+     * get function for radius of sphere
+     *
+     * @return sphere radius
+     */
     public double getRadius()
     {
         return radius;
     }
-
+/**
+     * function for printing sphere info
+     */
     @Override
     public String toString() {
         return "Sphere: " +
