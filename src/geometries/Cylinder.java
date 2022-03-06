@@ -3,9 +3,21 @@ import java.util.List;
 
 import primitives.*;
 import static primitives.Util.*;
+/**
+ * class for cylinder which is a finite tube
+ */
 public class Cylinder extends Tube {
+    /**
+     * height of cylinder
+     */
     private double height;
-
+/**
+     * ctor for cylinder
+     *
+     * @param axisRay cylinder direction
+     * @param radius  cylinder radius
+     * @param _height  cylinder height
+     */
     public Cylinder(Ray axisRay, double radius, double _height) {
         super(axisRay, radius);
         if (_height <= 0)
