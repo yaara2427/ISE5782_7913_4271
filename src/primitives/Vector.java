@@ -1,6 +1,13 @@
 package primitives;
 
 public class Vector extends Point {
+
+    /*
+    constructor for Vector class
+    x value for X Coordinate of the head Point
+    y value for Y Coordinate of the head Point
+    z value for Z Coordinate of the head Point
+    */
     public Vector(double x, double y, double z) {
         super(x, y, z);
         if (Double3.ZERO.equals(xyz)) {
@@ -15,14 +22,18 @@ public class Vector extends Point {
                 '}';
     }
 
+
+    /*
+    * @param another Object to compare
+    * @return true or false accordingly
+     */
     @Override
     public boolean equals(Object o) {
         return super.equals(o);
     }
 
-    /**
+    /*
      * add method
-     *
      * @param other the vector to add
      * @return algebraic added vector
      */
@@ -38,6 +49,12 @@ public class Vector extends Point {
         }
         return new Vector(result.d1,result.d2, result.d3);
     }
+
+    /*
+     * subtract method
+     * @param other the vector to subtract
+     * @return algebraic subtracted vector
+     */
     public Vector subtract(Vector other) {
         Double3 result = new Double3(
                 xyz.d1 - other.xyz.d1,
@@ -49,6 +66,10 @@ public class Vector extends Point {
         }
         return new Vector(result.d1,result.d2, result.d3);
     }
+    /*
+     * @param scalar scaling factot
+     * * @return new Vector corresponding to the actual one
+     */
 
     public Vector scale(double scalar) {
         if (scalar==0) {
@@ -62,6 +83,11 @@ public class Vector extends Point {
         return new Vector(result.d1,result.d2, result.d3);
     }
 
+    /*
+     dot product between two vectors (scalar product)
+     * @param v the right vector of U.V
+     * @return scalre value of dot product
+     */
     public double dotProduct(Vector other) {
         double u1 = xyz.d1;
         double u2 = xyz.d2;
@@ -74,6 +100,11 @@ public class Vector extends Point {
         return (u1 * v1 + u2 * v2 + u3 * v3);
     }
 
+    /*
+     * Cross product
+     * @param v second vector
+     * @return new Vector resulting from cross product
+     */
     public Vector crossProduct(Vector other) {
         double u1 = xyz.d1;
         double u2 = xyz.d2;
@@ -92,6 +123,10 @@ public class Vector extends Point {
         return new Vector(result.d1,result.d2,result.d3);
     }
 
+
+    /*
+     * @return euclidean length squared of the vector
+     */
     public double lengthSquared() {
         double u1 = xyz.d1;
         double u2 = xyz.d2;
@@ -100,10 +135,17 @@ public class Vector extends Point {
         return u1 * u1 + u2 * u2 + u3 * u3;
     }
 
+    /*
+     * @return length using Pythagoras
+     */
     public double length() {
         return Math.sqrt(lengthSquared());
     }
 
+    /*
+     * normalizing the current Vector
+     * @return this Vector normalized
+     */
     public Vector normalize() {
         Double3 result = new Double3(
                 xyz.d1/this.length(),
