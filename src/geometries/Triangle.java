@@ -4,7 +4,17 @@ import java.util.List;
 
 import primitives.*;
 import static primitives.Util.*;
+/**
+ * class for triangle
+ */
 public class Triangle extends Polygon {
+    /**
+     * constructor that gets points and builds a triangle accordingly
+     *
+     * @param p1 first vertex
+     * @param p2 second vertex
+     * @param p3 third vertex
+     */
 
     public Triangle(Point p1, Point p2, Point p3)
     {
