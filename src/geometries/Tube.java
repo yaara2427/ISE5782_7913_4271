@@ -41,7 +41,9 @@ public class Tube implements Geometry {
     public double getRadius() {
         return radius;
     }
-
+/**
+     * function for printing tube info
+     */
     @Override
     public String toString() {
         return "Tube{" +
