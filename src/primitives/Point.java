@@ -5,9 +5,25 @@ import java.util.Objects;
 public class Point {
     final Double3 xyz;
 
+    //     * primary constructor for Point
+
+    public Point(Double3 xyz) {
+        this.xyz = xyz;
+    }
+
+     /* secondary constructor for Point
+     x coordinate value for X axis
+     y coordinate value for Y axis
+     z coordinate value for Z axis
+      */
+
     public Point(double x, double y, double z) {
         xyz = new Double3(x,y,z);
     }
+
+    /* another Point to compare
+    return true or false accordingly
+     */
 
     @Override
     public boolean equals(Object o) {
@@ -40,6 +56,9 @@ public class Point {
         return new Vector(newXyz.d1, newXyz.d2, newXyz.d3);
     }
 
+    /*
+     return (x2 - x1)^2 + (y2-y1)^2 + (z2-z1)^2
+     */
     public double distanceSquared(Point other) {
         final double x1 = xyz.d1;
         final double y1 = xyz.d2;
@@ -52,6 +71,9 @@ public class Point {
         return ((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)) + ((z2 - z1) * (z2 - z1));
     }
 
+    /*
+    return euclidean distance between 2 points using the Pythagorean theorem
+     */
     public double distance(Point other) {
         return Math.sqrt(distanceSquared(other));
     }
