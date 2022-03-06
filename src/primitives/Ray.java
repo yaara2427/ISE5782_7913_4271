@@ -1,7 +1,15 @@
 package primitives;
-
+/**
+ * Class for representing a ray
+ */
 public class Ray {
+    /**
+     * Starting point of the ray
+     */
     Point p0;
+    /**
+     * Vector that determines the ray's direction
+     */
     Vector dir;
 
     public Ray(Point _p0, Vector _dir) {
