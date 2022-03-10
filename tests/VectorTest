@@ -17,6 +17,7 @@ class VectorTest {
 
         // ============ Equivalence Partitions Tests ==============
         assertTrue(isZero(v1.dotProduct(v2)+28),"ERROR: dotProduct() wrong value");
+        }
 
 @Test
     void testAdd() {
