@@ -7,7 +7,7 @@ import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.testng.AssertJUnit.assertTrue;
 import static primitives.Util.isZero;
-
+k
 class VectorTest {
 
     @Test
