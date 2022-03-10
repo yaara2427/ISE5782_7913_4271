@@ -1,22 +1,45 @@
 package primitives;
-
+/**
+ * Class for representing a ray
+ */
 public class Ray {
+    /**
+     * Starting point of the ray
+     */
     Point p0;
+    /**
+     * Vector that determines the ray's direction
+     */
     Vector dir;
-
+ /**
+     * Constructor that normalizes the given vector and sets the starting point to @param _p0
+     *
+     * @param p0  point of the ray beginning
+     * @param dir direction vector
+     */
     public Ray(Point _p0, Vector _dir) {
         p0 = _p0;
         dir = _dir.normalize();
     }
-
+ /**
+     * get function for the ray's starting point
+     * @return p0
+     */
     public Point getP0() {
         return p0;
     }
+     /**
+     * get function for the ray's direction vector
+     * @return dir
+     */
 
     public Vector getDir() {
         return dir;
     }
 
+     /**
+     * function to print ray info
+     */
     @Override
     public String toString() {
         return "Ray{" +
