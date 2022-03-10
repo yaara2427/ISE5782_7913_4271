@@ -49,3 +49,9 @@ class VectorTest {
     void testLength() {
         assertTrue(isZero(new Vector(0, 3, 4).length()-5),"ERROR: length() wrong value");
 }
+@Test
+    void testScale() {
+        Vector v1 = new Vector(1, 2, 3);
+        double t=5;
+        assertEquals(v1.scale(t),new Vector(5,10,15),"ERROR: scale() wrong value");
+    }
