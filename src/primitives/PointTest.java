@@ -7,7 +7,7 @@ class PointTest {
     @org.junit.jupiter.api.Test
     void testAdd() {
     }
-
+k
     @org.junit.jupiter.api.Test
     void testSubtract() {
     }
