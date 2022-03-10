@@ -41,6 +41,7 @@ class VectorTest {
     }
     @Test
     void testLengthSquared() {
+    // ============ Equivalence Partitions Tests ==============
         Vector v1 = new Vector(1, 2, 3);
         assertTrue(isZero(v1.lengthSquared()-14),"ERROR: lengthSquared() wrong value");
 
@@ -48,10 +49,12 @@ class VectorTest {
 
     @Test
     void testLength() {
+    // ============ Equivalence Partitions Tests ==============
         assertTrue(isZero(new Vector(0, 3, 4).length()-5),"ERROR: length() wrong value");
     }
     @Test
     void testScale() {
+    // ============ Equivalence Partitions Tests ==============
         Vector v1 = new Vector(1, 2, 3);
         double t=5;
         assertEquals(v1.scale(t),new Vector(5,10,15),"ERROR: scale() wrong value");
