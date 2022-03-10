@@ -18,5 +18,20 @@ class VectorTest {
         // ============ Equivalence Partitions Tests ==============
         assertTrue(isZero(v1.dotProduct(v2)+28),"ERROR: dotProduct() wrong value");
 
-
+@Test
+    void testAdd() {
+        // ============ Equivalence Partitions Tests ==============
+        // TC01: There is a simple single test here
+        Vector v1 = new Vector(1, -5, 20);
+        Vector v2 = new Vector(-8, 3, 10);
+        assertEquals(v1.add(v2),new Vector(-7,-2,30),"ERROR: add() wrong value");
+    }
+    @Test
+    void testSubtract() {
+        // ============ Equivalence Partitions Tests ==============
+        // TC01: There is a simple single test here
+        Vector v1 = new Vector(17, 5, 2);
+        Vector v2 = new Vector(-7, 4, 8);
+        assertEquals(v1.subtract(v2),new Vector(24,1,-6),"ERROR: subtract() wrong value");
+    }
 }
