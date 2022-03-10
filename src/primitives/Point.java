@@ -11,19 +11,17 @@ public class Point {
         this.xyz = xyz;
     }
 
-     /* secondary constructor for Point
-     x coordinate value for X axis
-     y coordinate value for Y axis
-     z coordinate value for Z axis
-      */
-
+    /**
+     *
+     * secondary constructor for Point
+     * @param x coordinate value for X axis
+     * @param y coordinate value for Y axis
+     * @param z coordinate value for Z axis
+     */
     public Point(double x, double y, double z) {
         xyz = new Double3(x,y,z);
     }
 
-    /* another Point to compare
-    return true or false accordingly
-     */
 
     @Override
     public boolean equals(Object o) {
@@ -40,9 +38,7 @@ public class Point {
 
     @Override
     public String toString() {
-        return "Point{" +
-                "xyz=" + xyz +
-                '}';
+        return "Point: "+ xyz ;
     }
 
     public Point add(Vector vector) {

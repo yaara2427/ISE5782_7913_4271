@@ -17,9 +17,7 @@ public class Vector extends Point {
 
     @Override
     public String toString() {
-        return "Vector{" +
-                "xyz=" + xyz +
-                '}';
+        return "Vector: " + xyz;
     }
 
 
