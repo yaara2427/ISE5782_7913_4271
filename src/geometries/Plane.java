@@ -40,10 +40,18 @@ public class Plane {
         p0= _p0;
         normal=_normal.normalize();
     }
+    /** 
+    * Get function for reference point on plane
+    * @return p0
+    */
 
     public Point getP0() {
         return p0;
     }
+    /** 
+    * Get function for normal vector to plane
+    * @return normal
+    */
 
     public Vector getNormal() {
         return normal;
