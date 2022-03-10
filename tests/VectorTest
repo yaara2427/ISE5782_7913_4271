@@ -1,36 +1,33 @@
 package primitives;
 
 import org.junit.jupiter.api.Test;
-import org.testng.annotations.Test;
-
-import static java.lang.System.out;
 import static org.junit.jupiter.api.Assertions.*;
-import static org.testng.AssertJUnit.assertTrue;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 import static primitives.Util.isZero;
+
 class VectorTest {
 
-@Test
+    @Test
     void testDotProduct() {
         Vector v1 = new Vector(1, 2, 3);
         Vector v2 = new Vector(-2, -4, -6);
         Vector v3 = new Vector(0, 3, -2);
-        
+
         // =============== Boundary Values Tests ==================
         assertTrue(isZero(v1.dotProduct(v3)),"ERROR: dotProduct() for orthogonal vectors is not zero");
 
         // ============ Equivalence Partitions Tests ==============
         assertTrue(isZero(v1.dotProduct(v2)+28),"ERROR: dotProduct() wrong value");
-        }
-
-@Test
+    }
+    @Test
     void testAdd() {
         // ============ Equivalence Partitions Tests ==============
         // TC01: There is a simple single test here
         Vector v1 = new Vector(1, -5, 20);
         Vector v2 = new Vector(-8, 3, 10);
         assertEquals(v1.add(v2),
-        new Vector(-7,-2,30),
-        "ERROR: add() wrong value");
+                new Vector(-7,-2,30),
+                "ERROR: add() wrong value");
     }
     @Test
     void testSubtract() {
@@ -39,10 +36,10 @@ class VectorTest {
         Vector v1 = new Vector(17, 5, 2);
         Vector v2 = new Vector(-7, 4, 8);
         assertEquals(v1.subtract(v2),
-        new Vector(24,1,-6),
-        "ERROR: subtract() wrong value");
+                new Vector(24,1,-6),
+                "ERROR: subtract() wrong value");
     }
-     @Test
+    @Test
     void testLengthSquared() {
         Vector v1 = new Vector(1, 2, 3);
         assertTrue(isZero(v1.lengthSquared()-14),"ERROR: lengthSquared() wrong value");
@@ -52,8 +49,8 @@ class VectorTest {
     @Test
     void testLength() {
         assertTrue(isZero(new Vector(0, 3, 4).length()-5),"ERROR: length() wrong value");
-}
-@Test
+    }
+    @Test
     void testScale() {
         Vector v1 = new Vector(1, 2, 3);
         double t=5;
@@ -63,7 +60,8 @@ class VectorTest {
      * Test method for {@link primitives.Vector#crossProduct(primitives.Vector)}.
      */
     @Test
-    public void testCrossProduct() {
+    void testCrossProduct() {
+
         Vector v1 = new Vector(1, 2, 3);
 
         // ============ Equivalence Partitions Tests ==============
@@ -72,16 +70,18 @@ class VectorTest {
 
         // TC01: Test that length of cross-product is proper (orthogonal vectors taken
         // for simplicity)
-        assertEquals("crossProduct() wrong result length", v1.length() * v2.length(), vr.length(), 0.00001);
+        assertEquals( v1.length() * v2.length(), vr.length(), 0.00001,"crossProduct() wrong result length");
 
         // TC02: Test cross-product result orthogonality to its operands
-        assertTrue("crossProduct() result is not orthogonal to 1st operand", isZero(vr.dotProduct(v1)));
-assertTrue("crossProduct() result is not orthogonal to 2nd operand", isZero(vr.dotProduct(v2)));
+        assertTrue(isZero(vr.dotProduct(v1)), "crossProduct() result is not orthogonal to 1st operand");
+        assertTrue(isZero(vr.dotProduct(v2)), "crossProduct() result is not orthogonal to 2nd operand");
 
         // =============== Boundary Values Tests ==================
         // TC11: test zero vector from cross-productof co-lined vectors
         Vector v3 = new Vector(-2, -4, -6);
-        assertThrows("crossProduct() for parallel vectors does not throw an exception",
-                IllegalArgumentException.class, () -> v1.crossProduct(v3));
+        assertThrows(IllegalArgumentException.class,
+                () -> v1.crossProduct(v3),
+                "" + "crossProduct() for parallel vectors does not throw an exception");
     }
 
+}
