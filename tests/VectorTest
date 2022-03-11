@@ -86,5 +86,18 @@ class VectorTest {
                 () -> v1.crossProduct(v3),
                 "" + "crossProduct() for parallel vectors does not throw an exception");
     }
+    @Test
+    void testNormalize()
+    {
+        Vector v = new Vector(1, 2, 3);
+        Vector u = v.normalize();
+        assertTrue(isZero(u.length() - 1),
+                "ERROR: the normalized vector is not a unit vector");
+        assertThrows(IllegalArgumentException.class,
+                () ->v.crossProduct(u),
+                "ERROR: the normalized vector is not parallel to the original one");
+        assertTrue(v.dotProduct(u) > 0,
+                "ERROR: the normalized vector is opposite to the original one");
+    }
 
 }
