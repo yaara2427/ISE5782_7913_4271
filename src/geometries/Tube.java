@@ -18,8 +18,8 @@ public class Tube implements Geometry {
 /**
      * ctor for tube
      *
-     * @param axisRay tube direction
-     * @param radius  tube radius
+     * @param _axisRay tube direction
+     * @param _radius  tube radius
      */
     public Tube(Ray _axisRay, double _radius) {
         axisRay = _axisRay;
