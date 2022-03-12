@@ -26,4 +26,9 @@ public class Triangle extends Polygon {
     @Override
     public String toString() {
         return "Triangle: " + "vertices: " + vertices + "plane: " + plane;}
+
+    @Override
+    public Vector getNormal(Point point) {
+        return super.getNormal(point);
+    }
 }
