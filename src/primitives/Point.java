@@ -3,7 +3,6 @@ package primitives;
 import java.util.Objects;
 
 public class Point {
-    public static Object ZERO;
     final Double3 xyz;
 
     //     * primary constructor for Point

@@ -8,6 +8,7 @@ class PointTest {
     /**
      * Test for distanceSquared function
      */
+    @Test
     void testDistanceSquared() {
         // ============ Equivalence Partitions Tests ==============
         Point p1 = new Point(1,2,3);
@@ -31,7 +32,7 @@ class PointTest {
     void testAdd() {
         // ============ Equivalence Partitions Tests ==============
         Point p1 = new Point(1, 2, 3);
-        assertEquals(p1.add(new Vector(-1, -2, -3)),Point.ZERO,"ERROR: Point + Vector does not work correctly");
+        assertEquals(p1.add(new Vector(-1, -2, -3)),new Point(0,0,0),"ERROR: Point + Vector does not work correctly");
     }
     /**
      * Test for subtract function.
