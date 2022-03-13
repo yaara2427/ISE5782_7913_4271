@@ -90,12 +90,4 @@ class VectorTest {
         assertFalse(v.dotProduct(u) < 0,
                 "ERROR: the normalized vector is opposite to the original one");
     }
-
-
-    @Test
-    void testConstructorZero() {
-        assertThrows(IllegalArgumentException.class,
-                ()->{ new Vector(0,0,0);},
-        "ERROR: zero vector should have thrown an exception");
-    }
 }
