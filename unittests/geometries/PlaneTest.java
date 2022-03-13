@@ -12,12 +12,12 @@ class PlaneTest {
     void testConstructor() {
         // =============== Boundary Values Tests ==================
 
-        //TC01: 2 points converge
+        //TC01: 2 points coinciding
         assertThrows(IllegalArgumentException.class,
                 () -> new Plane(new Point(0, 0, 1), new Point(1, 0, 0), new Point(0, 0, 1)),
                 "Failed constructing a correct plane");
 
-        //TC02: The points are on the same line
+        //TC02: The 3 points are on one line
         assertThrows(IllegalArgumentException.class,
                 () -> new Plane(new Point(0, 0, 1), new Point(0, 0, 2), new Point(0, 0, 3)),
                 "Failed constructing a correct plane");
