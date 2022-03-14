@@ -27,8 +27,7 @@ public class Plane {
 
         Vector _normal = U.crossProduct(V);
 
-        _normal.normalize();
-        normal =_normal;
+        normal= _normal.normalize();
     } 
 /**
      * Ctor for plane

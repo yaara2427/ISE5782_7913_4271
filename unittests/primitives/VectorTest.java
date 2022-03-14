@@ -81,6 +81,7 @@ class VectorTest {
     {
         Vector v = new Vector(1, 2, 3);
         Vector u = v.normalize();
+        // ============ Equivalence Partitions Tests ==============
         assertTrue(isZero(u.length() - 1),
                 "ERROR: the normalized vector is not a unit vector");
         assertThrows(IllegalArgumentException.class,
@@ -88,13 +89,5 @@ class VectorTest {
                 "ERROR: the normalized vector is not parallel to the original one");
         assertFalse(v.dotProduct(u) < 0,
                 "ERROR: the normalized vector is opposite to the original one");
-    }
-
-
-    @Test
-    void testConstructorZero() {
-        assertThrows(IllegalArgumentException.class,
-                ()->{ new Vector(0,0,0);},
-        "ERROR: zero vector should have thrown an exception");
     }
 }

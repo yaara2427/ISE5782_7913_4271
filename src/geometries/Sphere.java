@@ -15,36 +15,37 @@ public class Sphere implements Geometry {
      * Radius of sphere
      */
     private double radius;
+
     /**
      * Ctor for sphere
      *
      * @param _radius sphere radius
-     * @param _center sphere center 
+     * @param _center sphere center
      */
-    public Sphere(Point _center, double _radius)
-    {
-        center= _center;
+    public Sphere(Point _center, double _radius) {
+        center = _center;
         radius = _radius;
     }
+
     /**
      * get function for center of sphere
      *
      * @return sphere center
      */
-    public Point getCenter()
-    {
+    public Point getCenter() {
         return center;
     }
-/**
+
+    /**
      * get function for radius of sphere
      *
      * @return sphere radius
      */
-    public double getRadius()
-    {
+    public double getRadius() {
         return radius;
     }
-/**
+
+    /**
      * function for printing sphere info
      */
     @Override
@@ -59,5 +60,4 @@ public class Sphere implements Geometry {
         Vector v=point.subtract(center);
         return v.normalize();
     }
-
 }

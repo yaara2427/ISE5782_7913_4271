@@ -16,7 +16,7 @@ class TubeTest {
         // TC01: There is a simple single test here
         assertEquals( new Vector(0, 1, 0), tb.getNormal(new Point(0, 1, 1)),"Bad normal to tube");
         // =============== Boundary Values Tests ==================
-        // TC11: The point is in front of the head of the ray
+        // TC11: The point is in front of the ray's starting point
         assertEquals( new Vector(0, 1, 0), tb.getNormal(new Point(0, 1, 0)),"Bad normal to tube");
     }
 
