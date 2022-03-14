@@ -3,6 +3,7 @@ package primitives;
 import java.util.Objects;
 
 public class Point {
+    public final static Point ZERO = new Point(0d, 0d, 0d);
     final Double3 xyz;
 
     //     * primary constructor for Point
@@ -46,9 +47,9 @@ public class Point {
     }
     public Vector subtract(Point point) {
         Double3 newXyz = xyz.subtract(point.xyz);
-        if(Double3.ZERO.equals(newXyz)) {
+       /** if(Double3.ZERO.equals(newXyz)) {
             throw  new IllegalArgumentException("subtract resulting ZERO vector - not allowed");
-        }
+        }**/
         return new Vector(newXyz.d1, newXyz.d2, newXyz.d3);
     }
 
