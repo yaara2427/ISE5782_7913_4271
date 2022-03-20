@@ -74,4 +74,14 @@ public class Point {
     public double distance(Point other) {
         return Math.sqrt(distanceSquared(other));
     }
+
+    public double getX() {
+        return xyz.d1;
+    }
+    public double getY() {
+        return xyz.d2;
+    }
+    public double getZ() {
+        return xyz.d3;
+    }
 }
