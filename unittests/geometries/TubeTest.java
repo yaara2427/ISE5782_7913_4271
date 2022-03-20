@@ -20,4 +20,8 @@ class TubeTest {
         assertEquals( new Vector(0, 1, 0), tb.getNormal(new Point(0, 1, 0)),"Bad normal to tube");
     }
 
+    @Test
+    void findIntsersections() {
+
+    }
 }
