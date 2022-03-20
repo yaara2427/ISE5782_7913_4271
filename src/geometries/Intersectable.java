@@ -16,5 +16,5 @@ public interface Intersectable {
      * @param ray pointing towards the graphic object
      * @return immutable List of intersection points {@Link Point}
      */
-    List<Point> findIntersections(Ray ray) findIntersections(Ray ray);
+    public List<Point> findIntsersections(Ray ray);
 }

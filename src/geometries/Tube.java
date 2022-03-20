@@ -1,8 +1,14 @@
 package geometries;
-import java.util.List;
 
 import primitives.*;
+
+import java.util.List;
+import java.util.Objects;
 import static primitives.Util.*;
+
+import static primitives.Util.alignZero;
+import static primitives.Util.isZero;
+
 /**
  * class for representing a tube
  */
@@ -68,5 +74,9 @@ public class Tube implements Geometry {
         Vector O_P=point.subtract(O);
 
         return O_P.normalize();
+    }
+    @Override
+    public List<Point> findIntsersections(Ray ray) {
+        return null;
     }
 }

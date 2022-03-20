@@ -1,7 +1,9 @@
 package geometries;
 
-import primitives.Point;
-import primitives.Vector;
+import primitives.*;
+
+import java.util.List;
+
 /**
  * Class for representing a plane
  */
@@ -67,4 +69,9 @@ public class Plane {
                 ", normal=" + normal +
                 '}';
     }
+
+    public List<Point> findIntsersections(Ray ray) {
+        return null;
+    }
+
 }

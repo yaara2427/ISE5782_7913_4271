@@ -31,4 +31,10 @@ public class Triangle extends Polygon {
     public Vector getNormal(Point point) {
         return super.getNormal(point);
     }
+
+
+    public List<Point> findIntsersections(Ray ray) {
+        return null;
+    }
+
 }

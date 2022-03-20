@@ -76,6 +76,7 @@ class VectorTest {
                 () -> v1.crossProduct(v3),
                 "" + "crossProduct() for parallel vectors does not throw an exception");
     }
+
     @Test
     void testNormalize()
     {

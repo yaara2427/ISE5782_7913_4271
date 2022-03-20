@@ -60,4 +60,8 @@ public class Sphere implements Geometry {
         Vector v=point.subtract(center);
         return v.normalize();
     }
+
+    public List<Point> findIntsersections(Ray ray) {
+        return null;
+    }
 }
