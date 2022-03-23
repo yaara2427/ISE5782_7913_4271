@@ -33,8 +33,8 @@ public class Triangle extends Polygon {
     }
 
 
-    public List<Point> findIntsersections(Ray ray) {
-        return null;
-    }
+    @Override
+    public List<Point> findIntersections(Ray ray) {
+        return super.findIntersections(ray);}
 
 }

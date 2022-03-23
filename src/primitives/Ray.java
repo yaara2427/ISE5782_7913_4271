@@ -1,4 +1,9 @@
 package primitives;
+
+import java.util.Objects;
+
+import static primitives.Util.isZero;
+
 /**
  * Class for representing a ray
  */
@@ -17,9 +22,9 @@ public class Ray {
      * @param p0  point of the ray beginning
      * @param dir direction vector
      */
-    public Ray(Point _p0, Vector _dir) {
-        p0 = _p0;
-        dir = _dir.normalize();
+    public Ray(Point p0, Vector dir) {
+        this.p0 = p0;
+        this.dir = dir.normalize();
     }
  /**
      * get function for the ray's starting point
@@ -52,17 +57,19 @@ public class Ray {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-
         Ray ray = (Ray) o;
-
-        if (!p0.equals(ray.p0)) return false;
-        return dir.equals(ray.dir);
+        return p0.equals(ray.p0) && dir.equals(ray.dir);
     }
 
     @Override
     public int hashCode() {
-        int result = p0.hashCode();
-        result = 31 * result + dir.hashCode();
-        return result;
+        return Objects.hash(p0, dir);
+    }
+
+    public Point getPoint(double t) {
+        if(isZero(t)){
+            return p0;
+        }
+        return p0.add(this.dir.scale(t));
     }
 }
