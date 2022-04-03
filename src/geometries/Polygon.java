@@ -104,8 +104,8 @@ public class Polygon implements Geometry {
         else {
             V = (result.get(0)).subtract(p0);
             //Vi is the edges of the pyramid that the olygon is the bases of and the ray's head is the vertex of
-            //            //Ni is the normals to each side of the pyramid
-            //            //checks if each Ni*Vi have the same signp
+            //Ni is the normals to each side of the pyramid
+            //checks if each Ni*Vi have the same signp
             v1 = (vertices.get(0)).subtract(p0);
             v2 = (vertices.get(1)).subtract(p0);
             n1 = (v1.crossProduct(v2)).normalize();

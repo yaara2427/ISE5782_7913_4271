@@ -97,8 +97,8 @@ public class Plane implements Geometry{
 
         double t = alignZero(n.dotProduct(Q_P0)/nv);
 
+        //Point P = P0.add(v.scale(t));
         if(t > 0){
-            //Point P = P0.add(v.scale(t));
             Point P = ray.getPoint(t);
             return List.of(P);
         }

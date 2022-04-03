@@ -79,6 +79,8 @@ class PolygonTests {
     @Test
     void findIntsersections() {
         Polygon quadr=new Polygon(new Point(1,0,0),new Point(-2,0,0),new Point(-2,0,2),new Point(1,0,2));
+
+        // TC01: Inside polygon
         Ray ray=new Ray(new Point(0,1,0),new Vector(0,-2,1));
         List<Point> iP=quadr.findIntersections(ray);
         assertEquals(1,iP.size(),"number of points is wrong");

@@ -63,9 +63,11 @@ public class Sphere implements Geometry {
 
     @Override
     public List<Point> findIntersections(Ray ray) {
+
         Point p0 = ray.getP0();
         Point D = center;
         Vector V = ray.getDir();
+
         double tm=0,d=0;
         try{
             Vector U = D.subtract(p0);
@@ -74,24 +76,30 @@ public class Sphere implements Geometry {
         }
         catch (IllegalArgumentException e){ }
 
+        // no intersections : the ray direction is above the sphere
         if (d >= radius) {
             return null;
         }
+
         double th = Math.sqrt(radius * radius - d * d);
         double t1 = alignZero(tm - th);
         double t2 = alignZero(tm + th);
 
+        // Point P1 = P0.add(v.scale(t1));
+        // Point P2 = P0.add(v.scale(t2));
         if ((t1 > 0) && (t2 > 0)) {
             Point p1 = ray.getPoint(t1);
             Point p2 = ray.getPoint(t2);
             return (List.of(p1, p2));
         }
 
+        // Point P1 = P0.add(v.scale(t1));
         if (t1 > 0) {
             Point p1 = ray.getPoint(t1);
             return List.of(p1);
         }
 
+        // Point P2 = P0.add(v.scale(t2));
         if (t2 > 0) {
             Point p2 = ray.getPoint(t2);
             return List.of(p2);
