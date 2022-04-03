@@ -32,7 +32,6 @@ public class Triangle extends Polygon {
         return super.getNormal(point);
     }
 
-
     @Override
     public List<Point> findIntersections(Ray ray) {
         return super.findIntersections(ray);}

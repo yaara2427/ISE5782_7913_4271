@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 import primitives.Point;
 import primitives.Ray;
 import primitives.Vector;
-import
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -31,8 +30,5 @@ class TriangleTest {
         List<Point> result = tr.findIntersections(ray);
         assertEquals(1, result.size(), "Ray intersection inside triangle");
         assertEquals(new Point(1, 0, 1), result.get(0), "Wrong point value");
-    }
-
-
     }
 }

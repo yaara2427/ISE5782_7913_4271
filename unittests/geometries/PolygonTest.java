@@ -6,6 +6,8 @@ import org.junit.jupiter.api.Test;
 import geometries.*;
 import primitives.*;
 
+import java.util.List;
+
 /**
  * Testing Polygons
  *
@@ -76,6 +78,10 @@ class PolygonTests {
     }
     @Test
     void findIntsersections() {
-
+        Polygon quadr=new Polygon(new Point(1,0,0),new Point(-2,0,0),new Point(-2,0,2),new Point(1,0,2));
+        Ray ray=new Ray(new Point(0,1,0),new Vector(0,-2,1));
+        List<Point> iP=quadr.findIntersections(ray);
+        assertEquals(1,iP.size(),"number of points is wrong");
+        assertEquals( new Point(0, 0, 0.5), iP.get(0),"the intersection point is not true");
     }
 }
