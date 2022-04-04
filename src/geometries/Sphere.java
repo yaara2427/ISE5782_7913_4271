@@ -81,6 +81,7 @@ public class Sphere implements Geometry {
             return null;
         }
 
+
         double th = Math.sqrt(radius * radius - d * d);
         double t1 = alignZero(tm - th);
         double t2 = alignZero(tm + th);
