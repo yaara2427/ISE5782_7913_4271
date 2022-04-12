@@ -17,21 +17,17 @@ class GeometriesTest {
         Geometries geometries=new Geometries();
         assertNull(geometries.findIntersections(ray),"Wrong number of points");
 
-        //no intersection points with the ray
-        ray=new Ray(new Point(-2.66,-1.23,0),new Vector(5.06,-2.01,0));
-        assertNull(geometries.findIntersections(ray),"Wrong number of points");
-
         //only one geometry has intersection point with the ray
         geometries=new Geometries(quadr,tr);
         assertEquals((geometries.findIntersections(ray)).size(),1,"Wrong number of points");
 
+        //all geometries have intersection points with the ray
+        ray=new Ray(new Point(0,1,0),new Vector(0,-2,1));
+        assertEquals((geometries.findIntersections(ray)).size(),2,"Wrong number of points");
+
         //some of the geometries have intersection points, but not all of them
         Triangle tr1=new Triangle(new Point(-3.07,-3.56,0), new Point(-0.53, -5, 0), new Point(-2.83, -1.67, 0));
         geometries.add(tr1);
-        assertEquals((geometries.findIntersections(ray)).size(),2,"Wrong number of points");
-
-        //all geometries have intersection points with the ray
-        ray=new Ray(new Point(0,1,0),new Vector(0,-2,1));
         assertEquals((geometries.findIntersections(ray)).size(),2,"Wrong number of points");
     }
 }
