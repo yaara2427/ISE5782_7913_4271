@@ -67,7 +67,8 @@ public class Ray {
     }
 
     public Point getPoint(double t) {
-        if(isZero(t)){
+        // if t = zero return p0
+        if(isZero(t)) {
             return p0;
         }
         return p0.add(this.dir.scale(t));
