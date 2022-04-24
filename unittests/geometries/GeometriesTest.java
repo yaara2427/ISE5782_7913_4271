@@ -13,7 +13,7 @@ class GeometriesTest {
         Ray ray=new Ray(new Point(4, -2, -1),new Vector(-6,4,4));
         Triangle tr=new Triangle(new Point(3,2,1), new Point(-2, 2, 1), new Point(0, -3, 1));
 
-        //the collection is
+        //the collection is empty
         Geometries geometries=new Geometries();
         assertNull(geometries.findIntersections(ray),"Wrong number of points");
 
