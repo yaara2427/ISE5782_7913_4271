@@ -19,12 +19,12 @@ public class Sphere implements Geometry {
     /**
      * Ctor for sphere
      *
-     * @param _radius sphere radius
-     * @param _center sphere center
+     * @param radius sphere radius
+     * @param center sphere center
      */
-    public Sphere(Point _center, double _radius) {
-        center = _center;
-        radius = _radius;
+    public Sphere(Point center, double radius) {
+        this.center = center;
+        this.radius = radius;
     }
 
     /**

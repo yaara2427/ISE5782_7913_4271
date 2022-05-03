@@ -1,5 +1,6 @@
 package primitives;
 
+import java.util.List;
 import java.util.Objects;
 
 import static primitives.Util.isZero;
@@ -72,5 +73,28 @@ public class Ray {
             return p0;
         }
         return p0.add(this.dir.scale(t));
+    }
+
+    /**
+     * finding the closest point from the list to the ray start
+     * @param intersections list of intersections points
+     * @return closest point from the list
+     */
+    public Point findClosestPoint(List<Point> intersections){
+         Point result = null;
+            if (intersections == null) {
+                return null;
+            }
+
+            //finding the shortest distance between the point and the ray start point
+            double distance = Double.MAX_VALUE;
+            for (Point p : intersections) {
+                double dist = p0.distance(p);
+                if (dist < distance) {
+                    distance = dist;
+                    result = p;
+                }
+            }
+            return result;
     }
 }
