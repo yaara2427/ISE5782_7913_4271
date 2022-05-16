@@ -12,7 +12,7 @@ import static primitives.Util.isZero;
 /**
  * class for representing a tube
  */
-public class Tube implements Geometry {
+public class Tube extends Geometry {
     /**
      * tube direction
      */
@@ -75,8 +75,9 @@ public class Tube implements Geometry {
 
         return O_P.normalize();
     }
+
     @Override
-    public List<Point> findIntersections(Ray ray) {
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         return null;
     }
 }

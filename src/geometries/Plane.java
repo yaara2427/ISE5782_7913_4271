@@ -10,7 +10,7 @@ import static primitives.Util.isZero;
 /**
  * Class for representing a plane
  */
-public class Plane implements Geometry{
+public class Plane extends Geometry{
     /**
      * The reference point on the plane
      */
@@ -76,32 +76,43 @@ public class Plane implements Geometry{
     }
 
     @Override
-    public List<Point> findIntersections(Ray ray) {
+    protected List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
 
-        Point P0 = ray.getP0();
-        Vector v = ray.getDir();
-        Vector n = normal;
+        Point p0 = ray.getP0();
+        Vector V = ray.getDir();
+        if (p0.equals(q0))
+            return null;
+        Vector U = q0.subtract(p0);
 
-        double nv = alignZero(n.dotProduct(v));
+        //tD=denominator of parameter t
+        double tD = normal.dotProduct(U);
 
-        //direction of ray parallel to the plane : no intersections
-        if (isZero(nv)){
+        //tN=numerator of parameter t
+        double tN = normal.dotProduct(V);
+
+        //the ray begins in the same point which appears as
+        //reference point in the plane
+        if (p0.equals(q0)) {
             return null;
         }
 
-        // ray origin cannot start from the plane
-        if(P0.equals(q0)){
+        //the ray begins in the plane
+        if (isZero(tD)) {
             return null;
         }
-         Vector Q_P0 = q0.subtract(P0);
 
-        double t = alignZero(n.dotProduct(Q_P0)/nv);
-
-        if(t > 0){
-            //Point P = P0.add(v.scale(t));
-            Point P = ray.getPoint(t);
-            return List.of(P);
+        //Ray is parallel to the plane
+        if (isZero(tN)) {
+            return null;
         }
-        return null;
+        double t = tD / tN;
+
+        //if there is an intersection point
+        if (t > 0) {
+            Point iP = ray.getPoint(t);
+            return List.of(new GeoPoint(this,iP));
+        } else {
+            return null;
+        }
     }
 }

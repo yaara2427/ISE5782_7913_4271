@@ -32,8 +32,13 @@ public class Triangle extends Polygon {
         return super.getNormal(point);
     }
 
+
     @Override
-    public List<Point> findIntersections(Ray ray) {
-        return super.findIntersections(ray);}
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
+        List<GeoPoint> geoPointList = super.findGeoIntersectionsHelper(ray);
+        if(geoPointList == null)
+            return null;
+        return List.of(new GeoPoint(this, geoPointList.get(0).point));
+    }
 
 }

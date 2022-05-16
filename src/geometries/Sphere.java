@@ -6,7 +6,7 @@ import static primitives.Util.*;
 /**
  * Class for representing a sphere
  */
-public class Sphere implements Geometry {
+public class Sphere extends Geometry {
     /**
      * Center of sphere
      */
@@ -57,53 +57,45 @@ public class Sphere implements Geometry {
 
     @Override
     public Vector getNormal(Point point) {
-        Vector v=point.subtract(center);
+        Vector v = point.subtract(center);
         return v.normalize();
     }
 
     @Override
-    public List<Point> findIntersections(Ray ray) {
-
+    public List<GeoPoint> findGeoIntersectionsHelper(Ray ray) {
         Point p0 = ray.getP0();
         Point D = center;
         Vector V = ray.getDir();
+        double tm = 0, d = 0;
 
-        double tm=0,d=0;
-        try{
+        try {
             Vector U = D.subtract(p0);
             tm = V.dotProduct(U);
             d = Math.sqrt(U.lengthSquared() - tm * tm);
+        } catch (IllegalArgumentException e) {
         }
-        catch (IllegalArgumentException e){ }
 
-        // no intersections : the ray direction is above the sphere
         if (d >= radius) {
             return null;
         }
-
-
         double th = Math.sqrt(radius * radius - d * d);
         double t1 = alignZero(tm - th);
         double t2 = alignZero(tm + th);
 
         if ((t1 > 0) && (t2 > 0)) {
-            // Point P1 = P0.add(v.scale(t1));
-            // Point P2 = P0.add(v.scale(t2));
             Point p1 = ray.getPoint(t1);
             Point p2 = ray.getPoint(t2);
-            return (List.of(p1, p2));
+            return (List.of(new GeoPoint(this,p1), new GeoPoint(this,p2)));
         }
 
         if (t1 > 0) {
-            // Point P1 = P0.add(v.scale(t1));
             Point p1 = ray.getPoint(t1);
-            return List.of(p1);
+            return List.of(new GeoPoint(this,p1));
         }
 
         if (t2 > 0) {
-            // Point P2 = P0.add(v.scale(t2));
             Point p2 = ray.getPoint(t2);
-            return List.of(p2);
+            return List.of(new GeoPoint(this,p2));
         }
 
         return null;
